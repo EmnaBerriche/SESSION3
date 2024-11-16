@@ -6,8 +6,6 @@
 
 **Steganography** is a technique used to conceal secret information within an ordinary file or message, in such a way that it avoids detection. The hidden data can be in the form of text, image, video, or audio, and is often encrypted before being embedded into the cover medium to enhance security. Steganography can be used for both constructive purposes (like secure communications) and destructive purposes, including cyber-attacks known as **Stegware**.
 
-This repository provides a technical overview of steganography, particularly focusing on **Least Significant Bit (LSB)** techniques, tools for performing steganography, and examples of hiding and extracting data.
-
 ---
 
 ## LSB Steganography
@@ -15,6 +13,7 @@ This repository provides a technical overview of steganography, particularly foc
 **LSB (Least Significant Bit) Steganography** is a method of hiding information within digital images, audio, or other media by altering the least significant bits of each pixel or sample.
 
 - **Pixels in Images**: In an image, each pixel is made up of RGB (red, green, blue) values. Each of these values ranges from 0 to 255, which can be represented in 8 bits. By changing the least significant bits, you can embed secret information without visibly altering the image.
+  (C:\Users\user\Downloads\LSB)
 - **Audio Samples in .wav Files**: In audio steganography, the LSB of audio samples can be changed to hide data, similar to how pixel values are altered in images.
 
 ### Tools for LSB Steganography
