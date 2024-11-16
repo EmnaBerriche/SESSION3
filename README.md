@@ -13,7 +13,7 @@
 **LSB (Least Significant Bit) Steganography** is a method of hiding information within digital images, audio, or other media by altering the least significant bits of each pixel or sample.
 
 - **Pixels in Images**: In an image, each pixel is made up of RGB (red, green, blue) values. Each of these values ranges from 0 to 255, which can be represented in 8 bits. By changing the least significant bits, you can embed secret information without visibly altering the image.
-  (C:\Users\user\Downloads\LSB)
+  [](C:\Users\user\Downloads\LSB)
 - **Audio Samples in .wav Files**: In audio steganography, the LSB of audio samples can be changed to hide data, similar to how pixel values are altered in images.
 
 ### Tools for LSB Steganography
