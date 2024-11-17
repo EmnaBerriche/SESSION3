@@ -18,11 +18,7 @@
 
 ### Tools for LSB Steganography
 
-1. **StegOnline (georgeom.net)**  
-   A web-based tool for LSB steganography in images. It allows users to choose the number of bits to modify (LSB or MSB) and the direction of data embedding.  
-   [StegOnline](https://stegonline.georgeom.net/upload)
-
-2. **Steghide**  
+ **Steghide**  
    A command-line tool used for embedding and extracting hidden data from image and audio files (e.g., bmp, jpeg, wav, au). It supports encryption and passphrase protection to further secure the hidden data.
 
    **Basic Commands**:
@@ -35,20 +31,53 @@
      steghide extract -sf [stego_file] -p [password]
      ```
 
-3. **Stegolsb**  
-   A tool specifically designed for embedding and extracting hidden data from `.wav` files using LSB techniques. By modifying the LSB of audio samples, data can be hidden without noticeably affecting the sound quality.
+---
+# CTF Forensics and Steganography Challenges
 
-4. **Stegsnow**  
-   A tool for **whitespace steganography**, where messages are concealed using white spaces at the end of lines in a text file. Even if the whitespace pattern is detected, the use of encryption can prevent the message from being easily deciphered.
+## Overview
+
+This repository is focused on **Forensics** and **Steganography** challenges often encountered in Capture The Flag (CTF) competitions. These challenges require participants to analyze digital evidence, recover hidden data, and solve puzzles by using a wide variety of tools and techniques.
 
 ---
 
-## Examples
+## Forensics in CTF
 
-### Image Steganography with Steghide
+**Forensics** is the art of recovering the digital trail left behind on a computer system. In CTFs, forensic challenges often require participants to analyze files, memory dumps, network traffic, or logs to uncover hidden information or reconstruct events.
 
-- **Embedding Data in an Image**:
-   ```bash
-   steghide embed -cf example.jpg -ef secret.txt -p mypassword
+### Types of Forensics Challenges:
+
+1. **File Analysis**: Examine disk images, memory dumps, log files, or network captures for hidden information.
+2. **Steganography**: Detect and extract data hidden in images, audio, or other files.
+3. **Network Forensics**: Analyze packet captures (PCAP files) to recover data or trace malicious activity.
+4. **Memory Forensics**: Analyze volatile memory to uncover processes, network connections, or artifacts left by malware.
+5. **Log Analysis**: Review log files from web servers, firewalls, and intrusion detection systems.
+
+---
+
+## Common Forensics Tools and Commands
+
+### Initial Analysis:
+- `strings [file]`: Search for readable strings within a file.
+- `grep [pattern] [file]`: Search for a specific pattern in a file.
+- `bgrep`: Search for non-text patterns in binary files.
+- `hexdump -C [file]`: View the contents of a file in hexadecimal format.
+
+### File Formats:
+You may encounter various file formats during forensic challenges, such as:
+- Archive files (ZIP, TGZ)
+- Image files (JPG, PNG, BMP)
+- Packet captures (PCAP, PCAPNG)
+- Office documents (RTF, OOXML)
+  
+### File Signatures:
+Files often contain specific leading bytes called **file signatures** or **magic numbers** that identify their format. Use a hex editor to view these bytes and compare them with known signatures.
+
+### Encodings:
+In many challenges, data may be encoded. For example, **Base64** is easily recognized by its alphanumeric characters and “=” padding. Example:
+
+```bash
+echo aGVsbG8gd29ybGQh | base64 -D
+# Output: hello world!
+
 
 
