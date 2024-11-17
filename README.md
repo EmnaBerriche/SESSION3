@@ -1,7 +1,5 @@
 # SESSION2
-# CTF Cybersecurity Workshop: Steganography &amp; Forensics
-# Intro to Steganography
-
+# CTF Forensics and Steganography Challenges# Intro to Steganography
 ## Description
 
 **Steganography** is a technique used to conceal secret information within an ordinary file or message, in such a way that it avoids detection. The hidden data can be in the form of text, image, video, or audio, and is often encrypted before being embedded into the cover medium to enhance security. Steganography can be used for both constructive purposes (like secure communications) and destructive purposes, including cyber-attacks known as **Stegware**.
@@ -32,35 +30,20 @@
      ```
 
 ---
-# CTF Forensics and Steganography Challenges
 
-## Overview
-
-This repository is focused on **Forensics** and **Steganography** challenges often encountered in Capture The Flag (CTF) competitions. These challenges require participants to analyze digital evidence, recover hidden data, and solve puzzles by using a wide variety of tools and techniques.
-
----
 
 ## Forensics in CTF
 
 **Forensics** is the art of recovering the digital trail left behind on a computer system. In CTFs, forensic challenges often require participants to analyze files, memory dumps, network traffic, or logs to uncover hidden information or reconstruct events.
 
-### Types of Forensics Challenges:
-
-1. **File Analysis**: Examine disk images, memory dumps, log files, or network captures for hidden information.
-2. **Steganography**: Detect and extract data hidden in images, audio, or other files.
-3. **Network Forensics**: Analyze packet captures (PCAP files) to recover data or trace malicious activity.
-4. **Memory Forensics**: Analyze volatile memory to uncover processes, network connections, or artifacts left by malware.
-5. **Log Analysis**: Review log files from web servers, firewalls, and intrusion detection systems.
-
----
-
 ## Common Forensics Tools and Commands
 
 ### Initial Analysis:
-- `strings [file]`: Search for readable strings within a file.
-- `grep [pattern] [file]`: Search for a specific pattern in a file.
-- `bgrep`: Search for non-text patterns in binary files.
-- `hexdump -C [file]`: View the contents of a file in hexadecimal format.
+### 1. Search for Readable Strings in a File
+The `strings` command extracts readable (ASCII) text from binary files. This is useful when you want to search for hidden messages or readable data within a binary file.
+
+```bash
+strings [file]
 
 ### File Formats:
 You may encounter various file formats during forensic challenges, such as:
