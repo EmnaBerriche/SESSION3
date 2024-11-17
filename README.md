@@ -44,6 +44,27 @@ The `strings` command extracts readable (ASCII) text from binary files. This is 
 
 ```bash
 strings [file]
+```
+### 2.  search for a particular string in a file
+```bash
+grep [pattern] [file]
+//exemple
+grep "password" logs.txt
+```
+### 3. search for non-text data patterns
+```bash
+bgrep [pattern] [file]
+//exemple
+bgrep '\x50\x4B\x03\x04' example.bin
+```
+
+### 4.displays the content of a file in hexadecimal.
+```bash
+xxd image.jpg > dump.hex
+//Convert the hex dump back to binary
+xxd -r dump.hex restored_image.jpg
+```
+
 
 ### File Formats:
 You may encounter various file formats during forensic challenges, such as:
@@ -54,6 +75,8 @@ You may encounter various file formats during forensic challenges, such as:
   
 ### File Signatures:
 Files often contain specific leading bytes called **file signatures** or **magic numbers** that identify their format. Use a hex editor to view these bytes and compare them with known signatures.
+ you can check it against file signature repositories such as
+[Gary Kessler’s File Signature Analysis](https://www.garykessler.net/library/file_sigs.html)
 
 ### Encodings:
 In many challenges, data may be encoded. For example, **Base64** is easily recognized by its alphanumeric characters and “=” padding. Example:
@@ -61,6 +84,30 @@ In many challenges, data may be encoded. For example, **Base64** is easily recog
 ```bash
 echo aGVsbG8gd29ybGQh | base64 -D
 # Output: hello world!
+```
+### Image File Analysis
+An image file’s metadata can be viewed using Exiftool. The tool displays metadata for an input file, including file size, dimensions (width and height), file type, as well as the program used to create (e.g., Photoshop). 
+```bash
+exiftool [filename]
+```
+## Binwalk 
+is a powerful tool used in forensics and reverse engineering, especially during CTF challenges. It helps identify and extract embedded files or data from binary images (such as firmware, archives, or media files). It is particularly useful for inspecting files that may contain hidden data or multiple embedded file types.
+
+```bash
+binwalk [file]
+```
+# Extract embedded files:
+```bash
+binwalk -e [file]
+```
+# Specify which type of data to extract (e.g., gzip, tar, etc.) based on file signatures that binwalk recognizes
+```bash
+binwalk -D <filetype> <file>
+binwalk -D 'image:png' PurpleThing.jpeg
+```
+
+
+
 
 
 
