@@ -47,20 +47,20 @@ strings [file]
 ### 2.  search for a particular string in a file
 ```bash
 grep [pattern] [file]
-//exemple
+#exemple
 grep "password" logs.txt
 ```
 ### 3. search for non-text data patterns
 ```bash
 bgrep [pattern] [file]
-//exemple
+#exemple
 bgrep '\x50\x4B\x03\x04' example.bin
 ```
 
 ### 4.displays the content of a file in hexadecimal.
 ```bash
 xxd image.jpg > dump.hex
-//Convert the hex dump back to binary
+#Convert the hex dump back to binary
 xxd -r dump.hex restored_image.jpg
 ```
 
@@ -102,6 +102,7 @@ binwalk -e [file]
 ** Specify which type of data to extract (e.g., gzip, tar, etc.) based on file signatures that binwalk recognizes**
 ```bash
 binwalk -D <filetype> <file>
+#exemple
 binwalk -D 'image:png' PurpleThing.jpeg
 ```
 
