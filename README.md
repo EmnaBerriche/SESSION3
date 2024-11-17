@@ -91,15 +91,15 @@ exiftool [filename]
 ```
 ## Binwalk 
 is a powerful tool used in forensics and reverse engineering, especially during CTF challenges. It helps identify and extract embedded files or data from binary images (such as firmware, archives, or media files). It is particularly useful for inspecting files that may contain hidden data or multiple embedded file types.
-**Basic Scan**
+- **Basic Scan**
 ```bash
 binwalk [file]
 ```
-**Extract embedded files:**
+- **Extract embedded files:**
 ```bash
 binwalk -e [file]
 ```
-** Specify which type of data to extract (e.g., gzip, tar, etc.) based on file signatures that binwalk recognizes**
+- **Specify which type of data to extract (e.g., gzip, tar, etc.) based on file signatures that binwalk recognizes**
 ```bash
 binwalk -D <filetype> <file>
 #exemple
