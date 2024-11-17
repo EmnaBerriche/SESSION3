@@ -1,7 +1,6 @@
 # SESSION2
-# CTF Forensics and Steganography Challenges# Intro to Steganography
-## Description
-
+# CTF Forensics and Steganography Challenges
+# Steganography
 **Steganography** is a technique used to conceal secret information within an ordinary file or message, in such a way that it avoids detection. The hidden data can be in the form of text, image, video, or audio, and is often encrypted before being embedded into the cover medium to enhance security. Steganography can be used for both constructive purposes (like secure communications) and destructive purposes, including cyber-attacks known as **Stegware**.
 
 ---
